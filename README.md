@@ -1,1 +1,1 @@
-# mascodetest
+# The MAS code test
