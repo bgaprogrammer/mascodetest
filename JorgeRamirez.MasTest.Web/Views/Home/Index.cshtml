@@ -1,0 +1,95 @@
+﻿<h2>Employee Lookup - Jorge Ramírez</h2>
+
+<div style="container-fluid">
+    <form>
+        <div class="form-group">
+            <input id="txtEmployeeId" type="text" class="form-control" placeholder="Enter Employee Id">
+        </div>
+        <input type="button" id="btnLookUp" class="btn btn-primary" value="Search">
+    </form>
+    <br />
+    <table id="employeeTable" class="table table-condensed table-bordered table-vcentered dataTable">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>ContractTypeName</th>
+            <th>RoleId</th>
+            <th>RoleName</th>
+            <th>RoleDescription</th>
+            <th>HourlySalary</th>
+            <th>MonthlySalary</th>
+            <th>AnnualSalary</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+@section scripts
+{
+    <script>
+        (function ($) {
+            $.fn.inputFilter = function (inputFilter) {
+                return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
+                    if (inputFilter(this.value)) {
+                        this.oldValue = this.value;
+                        this.oldSelectionStart = this.selectionStart;
+                        this.oldSelectionEnd = this.selectionEnd;
+                    } else if (this.hasOwnProperty("oldValue")) {
+                        this.value = this.oldValue;
+                        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                    }
+                });
+            };
+        }(jQuery));
+
+        $("#txtEmployeeId").inputFilter(function (value) {
+            return /^\d*$/.test(value);
+        });
+
+        var apiUrl = "/api/employee/";
+        var table = null;
+
+        $(function () {
+            if (!$.fn.DataTable.isDataTable('#employeeTable')) {
+
+                table = $('#employeeTable').DataTable({
+                    autoWidth: false,
+                    processing: true,
+                    serverSide: true,
+                    searching: false,
+                    bInfo: false,
+                    pageLength: 10,
+                    ajax: {
+                        url: apiUrl,
+                        type: 'POST'
+                    },
+                    columnDefs: [
+                        { targets: 0, data: 'id' },
+                        { targets: 1, data: 'name' },
+                        { targets: 2, data: 'contractTypeName' },
+                        { targets: 3, data: 'roleId' },
+                        { targets: 4, data: 'roleName' },
+                        { targets: 5, data: 'roleDescription' },
+                        { targets: 6, data: 'hourlySalary', },
+                        { targets: 7, data: 'monthlySalary' },
+                        { targets: 8, data: 'annualSalary' }
+                    ]
+                });
+            }
+        });
+
+        $("#btnLookUp").click(function () {
+            var employeeId = $("#txtEmployeeId").val();
+            var newUrl = "";
+
+            if (employeeId.length > 0) {
+                newUrl = apiUrl + employeeId.toString();
+            } else {
+                newUrl = apiUrl;
+            }
+
+            table.ajax.url(newUrl).load();
+        });
+    </script>
+}

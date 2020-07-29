@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JorgeRamirez.MasTest.Web", "JorgeRamirez.MasTest.Web\JorgeRamirez.MasTest.Web.csproj", "{CDA18812-193D-4FBD-A694-AEB92F518AD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JorgeRamirez.MasTest.Core", "JorgeRamirez.MasTest.Core\JorgeRamirez.MasTest.Core.csproj", "{B4F1507C-CDAF-4F26-ABC7-5A815D53814A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JorgeRamirez.MasTest.Tests", "JorgeRamirez.MasTest.Tests\JorgeRamirez.MasTest.Tests.csproj", "{1359644B-4114-4B15-ADEA-3F90A2AD23E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDA18812-193D-4FBD-A694-AEB92F518AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA18812-193D-4FBD-A694-AEB92F518AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA18812-193D-4FBD-A694-AEB92F518AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA18812-193D-4FBD-A694-AEB92F518AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F1507C-CDAF-4F26-ABC7-5A815D53814A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F1507C-CDAF-4F26-ABC7-5A815D53814A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F1507C-CDAF-4F26-ABC7-5A815D53814A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F1507C-CDAF-4F26-ABC7-5A815D53814A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1359644B-4114-4B15-ADEA-3F90A2AD23E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1359644B-4114-4B15-ADEA-3F90A2AD23E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1359644B-4114-4B15-ADEA-3F90A2AD23E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1359644B-4114-4B15-ADEA-3F90A2AD23E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
